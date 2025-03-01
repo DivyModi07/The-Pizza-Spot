@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="col-lg-10 scrollable-content">
+        <div class="container-fluid mb-4">
+            <div id="pizza">
+                <!-- Order-online:Pizza -->
+                <div class="line-container mb-4 mt-5">
+                    <hr><h3><span>Pizza</span></h3><hr>
+                </div>
+                <div class="row justify-content-center">
+                    <!-- Pizza Item 1 -->
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <div class="card shadow d-flex flex-column h-100" id="pizza1">
+                            <img src="images/order-online-pizza1.jpg" class="card-img-top" alt="Margherita Pizza Image">
+                            <div class="card-body text-center d-flex flex-column justify-content-around" style="flex-grow: 1;">
+                                <h5 class="card-title">Margherita Pizza</h5>
+                                <p class="card-text">Classic pizza with fresh mozzarella and delicious basil.</p>
+                                <p class="fw-bold text-fiery-red">₹159</p>
+                                <button type="button" class="btn btn-fiery-red w-100" data-bs-toggle="modal" data-bs-target="#pizzaModal" onclick="openModal('pizza1')">Add</button>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Pizza Item 2 -->
+                    <div class="col-md-4 col-sm-6 col-12" id="pizza2">
+                        <div class="card shadow d-flex flex-column h-100">
+                            <img src="images/order-online-pizza2.jpg" class="card-img-top" alt="Garden Delight Pizza Image">
+                            <div class="card-body text-center d-flex flex-column justify-content-around" style="flex-grow: 1;">
+                                <h5 class="card-title">Hawaiian Pizza</h5>
+                                <p class="card-text">Classic pizza that combines pineapple, paneer, and sweet corn with extra cheese.</p>
+                                <p class="fw-bold text-fiery-red">₹159</p>
+                                <button type="button" class="btn btn-fiery-red w-100" data-bs-toggle="modal" data-bs-target="#pizzaModal" onclick="openModal('pizza2')">Add</button>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Pizza Item 3 -->
+                    <div class="col-md-4 col-sm-6 col-12 mb-5" id="pizza3">
+                        <div class="card shadow d-flex flex-column h-100">
+                            <img src="images/order-online-pizza3.jpg" class="card-img-top" alt="Spring Fling Pizza Image">
+                            <div class="card-body text-center d-flex flex-column justify-content-around" style="flex-grow: 1;">
+                                <h5 class="card-title">Spring Fling Pizza</h5>
+                                <p class="card-text">Classic pizza with vibrant combination of crisp capsicum, sweet corn, and soft chunks of paneer.</p>
+                                <p class="fw-bold text-fiery-red">₹159</p>
+                                <button type="button" class="btn btn-fiery-red w-100" data-bs-toggle="modal" data-bs-target="#pizzaModal" onclick="openModal('pizza3')">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

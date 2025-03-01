@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Signup</title>
+    <link href="signup.css" rel="stylesheet">
+    <script>
+        function validateSignupForm(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // Username validation
+            const username = document.getElementById('username').value;
+            const usernameRegex = /^[a-zA-Z0-9_]{3,15}$/;
+            if (!usernameRegex.test(username)) {
+                alert('Username must be 3-15 characters long and contain only letters,numbers and underscore.');
+                return false;
+            }
+
+            // Mobile number validation (must start with 7, 8, or 9 and be exactly 10 digits)
+            const mobile = document.getElementById('mobile').value;
+            const mobileRegex = /^[789][0-9]{9}$/;
+            if (!mobileRegex.test(mobile)) {
+                alert('Please enter a valid 10-digit mobile number starting with 7, 8, or 9.');
+                return false;
+            }
+
+            // Password validation (minimum 4 characters, no restrictions on content)
+            const password = document.getElementById('password').value;
+            const passwordRegex = /^.{4,}$/;
+            if (!passwordRegex.test(password)) {
+                alert('Password must be at least 4 characters long.');
+                return false;
+            }
+
+            alert('Signup Successful!');
+            window.location.href = 'test1.html';  
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container-fluid d-flex ">
+        <form class="float-md-start py-4 px-5 ms-5 mt-4 shadow-lg" onsubmit="validateSignupForm(event)">
+            <h3 class="text-center text-fiery-red display-6 fw-bold">The Pizza Spot</h3>
+            <h4 class="text-center mt-4 display-6 fw-normal">Signup</h4>
+
+            <div class="mb-3">
+              <label for="username" class="form-label mt-4 text-fiery-red fw-bold fs-6">Username</label>
+              <input type="text" class="form-control" id="username" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="mobile" class="form-label mt-4 text-fiery-red fw-bold fs-6">Contact number</label>
+                <input type="tel" class="form-control" id="mobile" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label mt-4 fw-bold text-fiery-red fs-6">Password</label>
+                <input type="password" class="form-control" id="password" required>
+            </div>
+
+            <button type="submit" class="btn btn-outline-fiery-red w-100 rounded-pill mt-4">Signup</button>
+            
+            <div class="mt-2 text-center">Already have an account?<a href="login.html" class="text-decoration-none">Login</a></div>
+        </form>
+    </div>
+</body>
+</html>

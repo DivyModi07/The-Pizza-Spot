@@ -1,0 +1,86 @@
+/* Root Variables */
+:root {
+    --fiery-red: #C0392B; /* Fiery Red */
+    --spicy-yellow: #F39C12; /* Spicy Yellow */
+    --light-charcoal: #7F8C8D; /* Light Charcoal */
+    --basil-green: #27AE60; /* Basil Green */
+    --pale-cream: #FAEBD7; /* Pale Cream */
+    --midnight-blue: #2C3E50; /* Midnight Blue */
+}
+
+body {
+    background-image: url("images/login.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Ensure body takes full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+/* Text Success Color */
+.text-fiery-red {
+    color: var(--fiery-red);
+}
+
+/* Button Styling */
+.btn-outline-fiery-red {
+    background-color: var(--pale-cream);
+    color: var(--fiery-red);
+}
+
+.btn-outline-fiery-red:hover {
+    background-color: var(--fiery-red);
+    color: var(--pale-cream);
+}
+
+
+/* Login Form */
+form {
+    width: 100%; /* 100% width for better responsiveness */
+    max-width: 400px; /* Max width for larger screens */
+    border-radius: 20px;
+    background-color: var(--pale-cream);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a nice effect */
+}
+
+/* Form Controls */
+.form-control {
+    color: black;
+    border: none;
+    box-shadow: none !important;
+    border-bottom: 1px solid;
+    border-bottom-color:var(--basil-green);
+    border-radius: 0px;
+    background-color: var(--pale-cream);
+}
+
+/* Form Control Hover */
+.form-control:focus {
+    background-color: var(--pale-cream);
+    border-bottom-color:var(--basil-green);
+}
+
+.btn-outline-fiery-red{
+    border-color: var(--fiery-red);
+    font-weight:600;
+}
+
+/* Media Query for Smaller Devices (Mobile & Tablets) */
+@media only screen and (max-width: 768px) {
+    form {
+        width: 90%; /* Increase width for small screens */
+        margin: auto;
+        margin-left: 45px;
+        padding: 15px;
+    }
+}
+
+/* Media Query for Large Devices */
+@media only screen and (min-width: 992px) {
+    form {
+        width: 90%; /* Adjust form width for larger screens */
+    }
+}

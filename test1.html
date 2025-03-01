@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.s0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="test1.css">
+
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-fiery-red navbar-dark fixed-top">
+            <div class="container-fluid mx-2">
+                <!-- Brand logo -->
+                <a class="navbar-brand d-flex align-items-center" onclick="navigateToOrderOnline('about-us')">
+                    <img src="images/pizza-logo-1.jpeg" width="50px" height="50px" class="rounded-circle"/>
+                    <span class="fs-4 px-2 text-white">The Pizza Spot</span>
+                </a>
+    
+                <!-- Toggler for mobile view -->
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <!-- Centered Navbar Links -->
+                    <ul class="navbar-nav mx-auto align-items-center gap-1 gap-lg-3 py-2">
+                        <li class="nav-item">
+                            <a class="nav-link fs-5 mx-2" href="#home" onclick="showSection('home')" data-bs-toggle="collapse" data-bs-target="#navbarContent">Home</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fs-5 mx-2" href="#select-outlet" role="button" data-bs-toggle="dropdown">Select Outlet</a>
+                            <ul class="dropdown-menu mt-2 ms-3">
+                                <li><a class="dropdown-item fw-bold" href="#outlet-1" onclick="selectOutlet('Iscon Crossroad, Ahmedabad')">Iscon Crossroad, Ahmedabad</a></li>
+                                <li><a class="dropdown-item fw-bold" href="#outlet-2" onclick="selectOutlet('Sindhu Bhavan, Ahmedabad')">Sindhu Bhavan, Ahmedabad</a></li>
+                                <li><a class="dropdown-item fw-bold" href="#outlet-3" onclick="selectOutlet('Naroda Gam, Ahmedabad')">Naroda Gam, Ahmedabad</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link fs-5 mx-2" href="#order-online" onclick="showSection('order-online')" data-bs-toggle="collapse" data-bs-target="#navbarContent">Order Online</a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link fs-5 mx-2" href="#about-us" onclick="showSection('about-us')" data-bs-toggle="collapse" data-bs-target="#navbarContent">About Us</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link fs-5 mx-2" href="#cart" onclick="showSection('cart')" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                                <i class="bi bi-cart"></i> Cart<sup class="fw-bold ms-1 fs-6" id="cart-count"></sup>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Profile -->
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link fs-5 mx-2"  href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="bi bi-person-circle fs-3"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right mt-2">
+                                <li><a class="dropdown-item fw-bold" href="login.html">Login</a></li>
+                                <li><a class="dropdown-item fw-bold" href="signup.html">Signup</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- home -->
+    <section id="home" class="section-margin">
+
+        <!-- Carousel -->
+        <div id="demo" class="carousel slide position-relative" data-bs-ride="carousel">
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0"class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/Carousel-1.jpg" alt="Image2" height="510px" width="100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/Carousel-2.jpg" alt="Image3" height="510px" width="100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/Carousel-3.jpg" alt="Image4" height="510px" width="100%">
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu -->
+        <div class="our-menu p-4 mt-4">
+            <div class="container text-center">
+                <h1 class="text-fiery-red">Explore Categories</h1>
+                <!-- Pizza -->
+                <div class="row d-flex flex-wrap justify-content-between align-items-center py-4 px-2">
+                    <div class="col-6 col-sm-2 mb-4 mb-lg-0">
+                        <div class="card" onclick="navigateToOrderOnline('order-online','pizza')">
+                            <div class="category-image">
+                                <a class="link_category_product">
+                                    <img src="images/pizza.png" class="image-fluid" alt="image-1">
+                                </a>
+                            </div>
+                            <div class="category-title">
+                                <a href="#">Pizza</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- desserts -->
+                    <div class="col-6 col-sm-2 mb-4 mb-lg-0 mt-3">
+                        <div class="card" onclick="navigateToOrderOnline('order-online','garlic-bread')">
+                            <div class="category-image">
+                                <a class="link_category_product">
+                                    <img src="images/gralic-bread2.png" height="80px" width="120px" class="image-fluid" alt="image-1">
+                                </a>
+                            </div>
+                            <div class="category-title">
+                                <a href="#">Garlic Bread</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Combo -->
+                    <div class="col-6 col-sm-2 mb-4 mb-lg-0 mt-3">
+                        <div class="card" onclick="navigateToOrderOnline('order-online','combo')">
+                            <div class="category-image">
+                                <a class="link_category_product">
+                                    <img src="images/combo.png" class="image-fluid" height="80px" width="120px" alt="image-1">
+                                </a>
+                            </div>
+                            <div class="category-title">
+                                <a href="#">Combo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bevarages -->
+                    <div class="col-6 col-sm-2 mb-4 mb-lg-0 mt-3">
+                        <div class="card" onclick="navigateToOrderOnline('order-online','beverages')">
+                            <div class="category-image">
+                                <a class="link_category_product">
+                                    <img src="images/beverages.png" height="80px" width="100px" class="image-fluid" alt="image-1">
+                                </a>
+                            </div>
+                            <div class="category-title">
+                                <a href="#">Beverages</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="mt-4">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-6 col-md-12 mb-lg-0 mb-5">
+                        <div class="card border-0">
+                            <img src="images/homepage-pizza.jpg" class="image-fluid rounded-3" alt="This is a image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 text-sec pl-sm-1 pl-md-3 pl-lg-4">
+                        <h1 class="text-lg-start text-center text-center">
+                            One Bite and <br>
+                            You're Hooked – <br>
+                            Pizza That Loves You Back!
+                        </h1>
+                        <p class="text-lg-start text-sm-center text-center fs-5">
+                            Dive into a pizza experience like no other, where every bite is a masterpiece of flavor. Our signature golden crust is crisp on the outside, pillowy on the inside, and topped with a symphony of fresh, mouthwatering ingredients. From comforting classics to bold, adventurous flavors, each pizza is handcrafted to make your taste buds sing. Why wait? Your perfect slice is just a click away – order online at The Pizza Spot and get ready to fall in love with pizza all over again.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <!-- Order Online Section -->
+    <section id="order-online" class="section-margin">
+        <div class="row">
+            <!-- Left sidebar -->
+            <div class="sidebar-container col-lg-2">
+                <nav class="sidebar shadow-lg text-center px-4 py-4 ">
+                    <ul class="nav flex-column">
+                        <li class="fw-bolder fs-4 mb-3">Menu</li>
+                        <li class="nav-item fs-5">
+                            <a class="nav-link rounded-pill" href="#pizza">Pizza</a>
+                        </li>
+                        <li class="nav-item fs-5">
+                            <a class="nav-link rounded-pill" href="#garlic-bread">Garlic Bread</a>
+                        </li>
+                        <li class="nav-item fs-5">
+                            <a class="nav-link rounded-pill" href="#combo">Combos</a>
+                        </li>
+                        <li class="nav-item fs-5">
+                            <a class="nav-link rounded-pill" href="#beverages">Beverages</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        
+            <!-- Right side scrollable content -->
+            <div class="col-lg-10 scrollable-content">
+                <div class="container-fluid mb-4">
+                    <div id="pizza">
+                        <!-- Order-online:Pizza -->
+                        <div class="line-container mb-4 mt-5">
+                            <hr><h3><span>Pizza</span></h3><hr>
+                        </div>
+                        <div class="row">
+                            <!-- Pizza Item 1 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-5 " id="pizza1">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-pizza1.jpg" class="card-img-top" alt="Margherita Pizza Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around" >
+                                        <h5 class="card-title">Margherita Pizza</h5>
+                                        <p class="card-text">Classic pizza with fresh mozzarella and delicious basil.</p>
+                                        <p class="fw-bold text-fiery-red">₹159</p>
+                                        <button type="button" class="btn btn-basil-green w-100" data-bs-toggle="modal" data-bs-target="#pizzaModal" onclick="openModal('pizza1')">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <!-- Pizza Item 2 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-5" id="pizza2">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-pizza2.jpg" class="card-img-top" alt="Garden Delight Pizza Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around" >
+                                        <h5 class="card-title">Hawaiian Pizza</h5>
+                                        <p class="card-text">Classic pizza that combines pineapple, paneer, and sweet corn with extra cheese.</p>
+                                        <p class="fw-bold text-fiery-red">₹159</p>
+                                        <button type="button" class="btn btn-basil-green w-100" data-bs-toggle="modal" data-bs-target="#pizzaModal" onclick="openModal('pizza2')">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <!-- Pizza Item 3 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-5" id="pizza3">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-pizza3.jpg" class="card-img-top" alt="Spring Fling Pizza Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around" >
+                                        <h5 class="card-title">Spring Fling Pizza</h5>
+                                        <p class="card-text">Classic pizza with vibrant combination of crisp capsicum, sweet corn, and soft chunks of paneer.</p>
+                                        <p class="fw-bold text-fiery-red">₹159</p>
+                                        <button type="button" class="btn btn-basil-green w-100" data-bs-toggle="modal" data-bs-target="#pizzaModal" onclick="openModal('pizza3')">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Pizza Item 4 -->
+                            <div class="col-md-4 mb-4 col-sm-6 col-12 mb-5" id="pizza4">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-pizza4.jpg" class="card-img-top" alt="Farm Villa Pizza Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">Farm Villa Pizza</h5>
+                                        <p class="card-text">It features freshness of capsicum,tomatoes,paneer and red paprika topped with korma dip.</p>
+                                        <p class="fw-bold text-fiery-red">₹245</p>
+                                        <button type="button" class="btn btn-basil-green w-100" data-bs-toggle="modal" data-bs-target="#pizzaModal" onclick="openModal('pizza4')">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Pizza Item 5 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-5" id="pizza5">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-pizza5.jpg" class="card-img-top" alt="Tandoori Panner Pizza Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">Tandoori Panner Pizza</h5>
+                                        <p class="card-text">It features spicy marinated paneer cubes, fresh onions,capsicum and bell peppers on a crispy crust.</p>
+                                        <p class="fw-bold text-fiery-red">₹245</p>
+                                        <button type="button" class="btn btn-basil-green w-100" data-bs-toggle="modal" data-bs-target="#pizzaModal" onclick="openModal('pizza5')">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Pizza Item 6 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-5" id="pizza6">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-pizza6.jpg" class="card-img-top" alt="Paneer 65 Pizza Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">Paneer 65 Pizza</h5>
+                                        <p class="card-text">A flavorful combination of paneer 65, crisp capsicum, tangy onions, and bold red paprika, all generously topped with extra cheese.</p>
+                                        <p class="fw-bold text-fiery-red">₹245</p>
+                                        <button type="button" class="btn btn-basil-green w-100" data-bs-toggle="modal" data-bs-target="#pizzaModal" onclick="openModal('pizza6')">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Pizza Item 7 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-4" id="pizza7">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-pizza7.jpg" class="card-img-top" alt="English Retreat Pizza">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">English Retreat Pizza</h5>
+                                        <p class="card-text">It features a crispy crust,red paprika,capsicum caramelized onions, bell peppers, and olives.</p>
+                                        <p class="fw-bold text-fiery-red">₹289</p>
+                                        <button type="button" class="btn btn-basil-green w-100" data-bs-toggle="modal" data-bs-target="#pizzaModal" onclick="openModal('pizza7')">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Pizza Item 8 -->
+                            <div class="col-md-4  col-sm-6 col-12 mb-4" id="pizza8">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-pizza8.jpg" class="card-img-top" alt="Margherita Pizza">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">Cheezy-7 Pizza</h5>
+                                        <p class="card-text">An exotic blend of mozzarella,white cheese, tangy cheddar,Monterey Jack,cream orange cheese, Colby, and orange cheddar.</p>
+                                        <p class="fw-bold text-fiery-red">₹289</p>
+                                        <button type="button" class="btn btn-basil-green w-100" data-bs-toggle="modal" data-bs-target="#pizzaModal" onclick="openModal('pizza8')">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Pizza Item 9 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-4" id="pizza9">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-pizza9.jpg" class="card-img-top" alt="Margherita Pizza">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">The Pizza Spot's Special</h5>
+                                        <p class="card-text">An exotic pizza consists of macaroni,capsicum,black olives,crispy onion,soft paneer and baby corn loaded with extra cheese.</p>
+                                        <p class="fw-bold text-fiery-red">₹289</p>
+                                        <button type="button" class="btn btn-basil-green w-100" data-bs-toggle="modal" data-bs-target="#pizzaModal" onclick="openModal('pizza9')">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="garlic-bread">
+                        <!-- Order-online:Garlic bread -->
+                        <div class="line-container mb-4">
+                            <hr><h3><span>Garlic Bread</span></h3><hr>
+                        </div>
+                        <div class="row" id="garlic_bread1">
+                            <!-- Garlic bread Item 1 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-4">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-garlic-bread1.jpg" class="card-img-top" alt="Cheesy Garlic Bread Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">Cheesy Garlic Bread</h5>
+                                        <p class="card-text">Its a combination of soft, buttery bread topped with melted cheese and aromatic garlic for a perfect savory snack.(3 PCS)</p>
+                                        <p class="fw-bold text-fiery-red">₹89</p>
+                                        <button type="button" class="btn btn-basil-green w-100" onclick="addToCart(event,'garlic_bread1',false)">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Garlic bread Item 2 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-4" id="garlic_bread2">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-garlic-bread2.jpg" class="card-img-top" alt="Supreme Garlic Bread Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">Supreme Garlic Bread</h5>
+                                        <p class="card-text">Topped with golden corn,crispy onions,black olives, spicy sliced jalapeños, and a generous layer of melted cheese.(3 PCS)</p>
+                                        <p class="fw-bold text-fiery-red">₹119</p>
+                                        <button type="button" class="btn btn-basil-green w-100" onclick="addToCart(event,'garlic_bread2',false)">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Garlic bread Item 3 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-4" id="garlic_bread3">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-garlic-bread3.jpg" class="card-img-top" alt="Paneer Tikka Garlic Bread Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">Paneer Tikka Garlic Bread</h5>
+                                        <p class="card-text">Layered with melted cheese, vibrant red paprika, and flavorful paneer, creating a delightful and savory treat that's simply irresistible.(3 PCS)</p>
+                                        <p class="fw-bold text-fiery-red">₹139</p>
+                                        <button type="button" class="btn btn-basil-green w-100" onclick="addToCart(event,'garlic_bread3',false)">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="combo">
+                        <!-- Order-online:Combo -->
+                        <div class="line-container mb-4">
+                            <hr><h3><span>Combo Offer</span></h3><hr>
+                        </div>
+                        <div class="row">
+                            <!-- Combo Item 1 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-4" id="combo1">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-combo1.jpg" class="card-img-top" alt="English Retreat Pizza & Cheesy  Garlic Bread Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">English Retreat Pizza & Cheesy  Garlic Bread</h5>
+                                        <p class="card-text">Combo of delighful English Retreat Pizza(Small) & Cheesy  Garlic Bread(3 PCS) with 250 ml of coke.</p>
+                                        <p class="fw-bold text-fiery-red">₹399</p>
+                                        <button type="button" class="btn btn-basil-green w-100" onclick="addToCart(event,'combo1',false)">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Combo Item 2 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-4" id="combo2">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-combo2.jpg" class="card-img-top" alt="Pizza Mania Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">Pizza Mania</h5>
+                                        <p class="card-text">Consists of onion pizza,tomato pizza,gloden corn pizza,capsicum & onion pizza(all small),and garlic bread with 250 ml of coke.</p>
+                                        <p class="fw-bold text-fiery-red">₹449</p>
+                                        <button type="button" class="btn btn-basil-green w-100" onclick="addToCart(event,'combo2',false)">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Combo Item 3 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-4" id="combo3">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-combo3.jpg" class="card-img-top" alt="Margherita Pizza & Farm villa Pizza Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">Margherita Pizza & Farm villa Pizza</h5>
+                                        <p class="card-text">Combo of classic cheesy Margherita(small) and Farm Villa Pizza(small) with two 250 ml cokes. </p>
+                                        <p class="fw-bold text-fiery-red">₹489</p>
+                                        <button type="button" class="btn btn-basil-green w-100" onclick="addToCart(event,'combo3',false)">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="beverages">
+                        <!-- Order-online:beverages -->
+                        <div class="line-container mb-4 ">
+                            <hr><h3><span>Beverages</span></h3><hr>
+                        </div>
+                        <div class="row">
+
+                            <!-- beverages Item 1 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-4" id="beverage1">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-beverage1.jpg" class="card-img-top" alt="Thums Up Can Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">Thums Up Can</h5>
+                                        <p class="card-text">Can volume 300ml</p>
+                                        <p class="fw-bold text-fiery-red">₹45</p>
+                                        <button type="button" class="btn btn-basil-green w-100" onclick="addToCart(event,'beverage1',false)">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- beverages Item 2 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-4" id="beverage2">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-beverage2.jpg" class="card-img-top" alt="Mountain Dew Can Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">Mountain Dew Can</h5>
+                                        <p class="card-text">Can volume 300ml.</p>
+                                        <p class="fw-bold text-fiery-red">₹50</p>
+                                        <button type="button" class="btn btn-basil-green w-100" onclick="addToCart(event,'beverage2',false)">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- beverages Item 3 -->
+                            <div class="col-md-4 col-sm-6 col-12 mb-4" id="beverage3">
+                                <div class="card shadow-lg d-flex flex-column h-100">
+                                    <img src="images/order-online-beverage3.jpg" class="card-img-top" alt="Coca Cola Can Image">
+                                    <div class="card-body text-center d-flex flex-column justify-content-around">
+                                        <h5 class="card-title">Coca Cola Can</h5>
+                                        <p class="card-text">Can volume 300ml</p>
+                                        <p class="fw-bold text-fiery-red">₹60</p>
+                                        <button type="button" class="btn btn-basil-green w-100" onclick="addToCart(event,'beverage3',false)">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Modal for desktop -->
+                    <div class="modal fade" id="pizzaModal">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class=" text-end">
+                                        <button type="button" class="btn-close fs-3 p-0" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="row">
+                                        <!-- Left side: Image and Description -->
+                                        <div class="col-md-6">
+                                            <img src="images/order-online-pizza1.jpg" class="img-fluid rounded mb-md-3 mt-2 h-50 w-100" alt="Margherita Pizza" id="pizzaImage" >
+                                            <h4 class="mt-5 mt-md-3 text-md-start text-center" id="pizzaTitle">Pizza Name</h4>
+                                            <p id="pizzaDescription">Pizza Description</p>
+                                            <p class="fw-bold text-fiery-red" id="pizzaPrice">₹189</p>
+                                        </div>
+
+                                        <!-- Right side: Customization options -->
+                                        <div class="col-md-6">
+                                            <h4 class="text-center text-md-start pb-2">Customize Your Pizza
+                                            </h4>
+                                            <form>
+                                                <!-- Pizza Size -->
+                                                <div class="mb-3">
+                                                    <label class="form-label text-firey-red fw-bolder">Choose Size</label><br>
+                                                    <div class="row d-flex justify-content-between">
+                                                        <div class="col-6 text-start my-2">
+                                                            <label for="size-small"><p>Small [Serves-1]</p></label>
+                                                        </div>
+                                                        <div class="col-6 text-end my-2" >
+                                                            <label for="size-small" id="ps-sm" class="fw-bold">₹199</label>
+                                                            <input class="form-check-input" type="radio" name="size" id="size-small" value="small" required>
+                                                        </div>
+
+                                                        <div class="col-6 text-start my-2">
+                                                            <label for="size-medium"><p>Medium [Serves-2]</p></label>
+                                                        </div>
+                                                        <div class="col-6 text-end my-2" >
+                                                            <label for="size-medium"id="ps-md" class="fw-bold">₹299</label>
+                                                            <input class="form-check-input" type="radio" name="size" id="size-medium" value="medium" required>
+                                                        </div>
+
+                                                        <div class="col-6 text-start my-2">
+                                                            <label for="size-large"><p>Large [Serves-4]</p></label>
+                                                        </div>
+                                                        <div class="col-6 text-end my-2" >
+                                                            <label for="size-large" id="ps-lg" class="fw-bold">₹399</label>
+                                                            <input class="form-check-input" type="radio" name="size" id="size-large" value="large" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Pizza Crust -->
+                                                <div class="mb-3">
+                                                    <label class="form-label text-firey-red fw-bolder">Change Crust</label><br>
+                                                    <div class="row d-flex justify-content-between">
+                                                        <div class="col-6 text-start my-2">
+                                                            <label for="Wheat-Thin-Crust"><p>Wheat Thin Crust</p></label>
+                                                        </div>
+                                                        <div class="col-6 text-end my-2">
+                                                            <label for="Wheat-Thin-Crust" class="fw-bold">+₹39</label>
+                                                            <input class="form-check-input" type="radio" name="change crust" id="Wheat-Thin-Crust" value="Wheat Thin Crust" >
+                                                        </div>
+
+                                                        <div class="col-6 text-start my-2">
+                                                            <label for="Cheese-Burst"><p>Cheese Burst</p></label>
+                                                        </div>
+                                                        <div class="col-6 text-end my-2">
+                                                            <label for="Cheese-Burst" class="fw-bold">+₹49</label>
+                                                            <input class="form-check-input" type="radio" name="change crust" id="Cheese-Burst" value="Cheese Burst" >
+                                                        </div>
+
+                                                        <div class="col-6 text-start my-2">
+                                                            <label for="Fiery-Cheese-Burst"><p>Fiery Cheese Burst</p></label>
+                                                        </div>
+                                                        <div class="col-6 text-end my-2">
+                                                            <label for="Fiery-Cheese-Burst" class="fw-bold">+₹59</label>
+                                                            <input class="form-check-input" type="radio" name="change crust" id="Fiery-Cheese-Burst" value="Fiery Cheese Burst" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Extra Toppings -->
+                                                <div class="mb-3">
+                                                    <label class="form-label text-firey-red fw-bolder">Extra Toppings</label><br>
+                                                    
+                                                    <div class="row">
+
+                                                        <div class="col-6 text-start my-2">
+                                                            <label for="corn"><p>Golden Corn</p></label>
+                                                        </div>
+                                                        <div class="col-6 text-end my-2">
+                                                            <label for="corn" class="fw-bold">+₹29</label>
+                                                            <input class="form-check-input" type="checkbox" id="corn" name="toppings" value="corn">
+                                                        </div>
+
+                                                        <div class="col-6 text-start my-2">
+                                                            <label for="capsicum"><p>Stuffed Capsicum</p></label>
+                                                        </div>
+                                                        <div class="col-6 text-end my-2">
+                                                            <label for="capsicum" class="fw-bold">+₹29</label>
+                                                            <input class="form-check-input" type="checkbox" id="capsicum" name="toppings" value="capsicum">
+                                                        </div>
+
+                                                        <div class="col-6 text-start my-2">
+                                                            <label for="olives"><p>Black Olives</p></label>
+                                                        </div>
+                                                        <div class="col-6 text-end my-2">
+                                                            <label for="olives" class="fw-bold">+₹39</label>
+                                                            <input class="form-check-input" type="checkbox" id="olives" name="toppings" value="olives">
+                                                        </div>
+
+
+                                                        <div class="col-6 text-start my-2">
+                                                            <label for="paneer"><p>Fiery Paneer</p></label>
+                                                        </div>
+                                                        <div class="col-6 text-end my-2">
+                                                            <label for="paneer" class="fw-bold">+₹39</label>
+                                                            <input class="form-check-input" type="checkbox" id="paneer" name="toppings" value="paneer">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Add to Cart Button -->
+                                                <button type="submit" class="btn btn-basil-green-modal w-100" onclick="addToCart(event,null,true)">Add to Cart</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile Floating Button -->
+            <div id="mobileMenuButton" class="mobile-menu-btn d-lg-none">
+                <button type="button" class="btn btn-fiery-red" data-bs-toggle="modal" data-bs-target="#mobilemenu">
+                    Menu
+                </button>
+            </div>
+
+            <!-- Mobile Menu Modal -->
+            <div class="modal fade" id="mobilemenu">
+                <div class="modal-dialog modal-sm modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body d-flex align-items-center justify-content-center">
+                            <!-- Add your sidebar content here -->
+                            <nav class="mobile-modal text-center px-4 py-4 d-flex align-items-center h-100">
+                                <ul class="nav flex-column ">
+                                    <li class="fw-bolder fs-4 mb-3">Menu</li>
+                                    <li class="nav-item fs-5">
+                                        <a class="nav-link rounded-pill" href="#pizza" onclick="closeModal(event)">Pizza</a>
+                                    </li>
+                                    <li class="nav-item fs-5">
+                                        <a class="nav-link rounded-pill" href="#garlic-bread" onclick="closeModal(event)">Garlic Bread</a>
+                                    </li>
+                                    <li class="nav-item fs-5">
+                                        <a class="nav-link rounded-pill" href="#combo" onclick="closeModal(event)">Combos</a>
+                                    </li>
+                                    <li class="nav-item fs-5">
+                                        <a class="nav-link rounded-pill" href="#beverages" onclick="closeModal(event)">Beverages</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Cart  -->
+    <section id="cart" class="section-margin">
+    <div class="container-fluid">
+        <!-- Cart Header -->
+        <div class="line-container pt-4">
+            <hr><h3><span>Your Cart</span></h3><hr>
+        </div>
+
+        <div class="row d-flex justify-content-between">
+            <!-- Cart Items Section (Flexible Column) -->
+            <div class="cart-items col-lg-8 col-11  mb-3 mx-auto">
+                <div id="empty-cart-message">
+                    <h4 class="text-center">Cart is empty</h4> 
+                </div>
+                <!-- Cart items will be dynamically inserted here by JS -->
+            </div>
+
+            <!-- Fixed Sidebar Section (Order Summary) -->
+            <div class="col-lg-3 col-11 mt-2 mb-5 mx-auto shadow-lg" style="border-radius: 10px;background-color: whitesmoke; border: 2px solid var(--fiery-red);">
+                <div class="fixed-sidebar p-3 h-auto">
+                    <h5>Order Summary</h5>
+                    <p>Subtotal: ₹0.00</p>
+                    <button class="btn btn-basil-green w-100 ">Proceed to Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about-us" class="section-margin">
+        <div class="container">
+            <div class="row align-items-center pt-5 px-2">
+                <div class="col-lg-6 mb-4">
+                    <img src="images/order-online-pizza1.1.jpg" class="img-fluid rounded-3 shadow-lg-lg " alt="About Us Image">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="text-fiery-red">About Us</h1>
+                    <p class="fs-5 mb-3">
+                        Welcome to <strong>The Pizza Spot</strong>! We are dedicated to delivering delicious pizzas made with the freshest ingredients, handcrafted with love. Whether you crave a classic Margherita or a bold new creation, our menu has something for everyone.
+                    </p>
+                    <p class="fs-5 mb-3">
+                        Our chefs are passionate about creating unique flavor combinations and use the best locally-sourced ingredients. We believe in quality and authenticity in every bite, from the crispy crust to the mouthwatering toppings.
+                    </p>
+                    <p class="fs-5 mb-3">
+                        At <strong>The Pizza Spot</strong>, it's not just about pizza—it's about community. We believe in giving back to our neighborhood by hosting events and supporting local causes. Join us and become part of our pizza-loving family!
+                    </p>
+                    <p class="fs-5 mb-5">
+                        Thank you for choosing us, and we look forward to serving you with the best pizza in town!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms and conditions -->
+     <section id="terms-and-conditions" class="section-margin">
+        <div class="container mb-4 pt-4">
+            <h1 class="text-fiery-red">Terms and Conditions</h1>
+            <p class="fs-5 mb-3">
+                Welcome to <strong>The Pizza Spot</strong>! Please read these terms and conditions carefully before using our services.
+            </p>
+            <h5 class="fw-bold">1. General Information</h5>
+            <p class="fs-5 mb-3">
+                By accessing or using our website, you agree to be bound by these terms and conditions. We reserve the right to update or modify these terms at any time without prior notice.
+            </p>
+            <h5 class="fw-bold">2. Ordering and Delivery</h5>
+            <p class="fs-5 mb-3">
+                All orders placed through our website are subject to acceptance and availability. We strive to deliver your order within the estimated time; however, delivery times are not guaranteed and may vary due to unforeseen circumstances.
+            </p>
+            <h5 class="fw-bold">3. Payments</h5>
+            <p class="fs-5 mb-3">
+                All payments must be made through the payment options provided on the website. We do not accept responsibility for payment issues resulting from incorrect information provided by the customer.
+            </p>
+            <h5 class="fw-bold">4. Refund and Cancellation</h5>
+            <p class="fs-5 mb-3">
+                You may cancel your order within a few minutes of placing it. If you are not satisfied with your order, please contact our customer service team for assistance. Refunds are provided at our discretion.
+            </p>
+            <h5 class="fw-bold">5. Liability</h5>
+            <p class="fs-5 mb-3">
+                We are not responsible for any damages or losses arising from your use of our website or services, except as required by law.
+            </p>
+        </div>
+    </section>
+
+    <!-- Privacy Policy -->
+    <section id="privacy-policy" class="section-margin">
+        <div class="container mb-4 pt-4">
+            <h1 class="text-fiery-red">Privacy Policy</h1>
+            <p class="fs-5 mb-3">
+                At <strong>The Pizza Spot</strong>, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, and protect the information you provide to us.
+            </p>
+            <h5 class="fw-bold">1. Information We Collect</h5>
+            <p class="fs-5 mb-3">
+                We collect personal information that you voluntarily provide when you place an order, sign up for an account, or contact us. This includes your name, email address, phone number, and payment details.
+            </p>
+            <h5 class="fw-bold">2. How We Use Your Information</h5>
+            <p class="fs-5 mb-3">
+                We use the information we collect to process your orders, provide customer support, and improve our services. We may also use your email address to send you promotional offers, with your consent.
+            </p>
+            <h5 class="fw-bold">3. Information Sharing</h5>
+            <p class="fs-5 mb-3">
+                We do not sell, trade, or rent your personal information to third parties. We may share your information with service providers who assist us in operating our website and delivering your orders, but they are required to keep your information confidential.
+            </p>
+            <h5 class="fw-bold">4. Data Security</h5>
+            <p class="fs-5 mb-3">
+                We take appropriate security measures to protect your personal information from unauthorized access, disclosure, or misuse. However, no system is completely secure, and we cannot guarantee the security of your information.
+            </p>
+            <h5 class="fw-bold">5. Cookies</h5>
+            <p class="fs-5 mb-3">
+                Our website uses cookies to enhance your browsing experience. Cookies are small files stored on your device that help us understand how you use our website and allow us to personalize your experience.
+            </p>
+            <h5 class="fw-bold">6. Changes to This Policy</h5>
+            <p class="fs-5 mb-3">
+                We reserve the right to update this Privacy Policy at any time. Any changes will be posted on this page, and we encourage you to review this policy regularly.
+            </p>
+            <h5 class="fw-bold">7. Contact Us</h5>
+            <p class="fs-5 mb-3">
+                If you have any questions or concerns about this Privacy Policy, please contact us at support@thepizzaspot.com.
+            </p>    
+        </div>
+    </section>
+
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-2">
+        <div class="container">
+            <div class="footer-row d-flex flex-wrap justify-content-between">
+                <!-- Footer Section 1: About -->
+                <div class="footer-col">
+                    <h5 class="text-fiery-red">About Us</h5>
+                    <p class="py-1 text-white text-start">
+                        At The Pizza Spot, we serve delicious, freshly made pizzas with high-quality ingredients, delivered hot to your door.
+                    </p>
+                </div>
+                <!-- Footer Section 2: Quick Links -->
+                <div class="footer-col">
+                    <h5 class="text-fiery-red">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none" onclick="navigateToOrderOnline('home')" >Home</a></li>
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none" onclick="navigateToOrderOnline('order-online','pizza')">Menu</a></li>
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none" onclick="navigateToOrderOnline('terms-and-conditions')">Terms & Conditions</a></li>
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none" onclick="navigateToOrderOnline('privacy-policy')">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Section 3: Contact -->
+                <div class="footer-col">
+                    <h5 class="text-fiery-red">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li class="py-1"><i class="bi bi-geo-alt"></i> Address: 123 Sola Crossroad, Sola, Ahmed, India</li>
+                        <li class="py-1"><i class="bi bi-telephone"></i> Phone: +91 9909480864</li>
+                        <li class="py-1"><i class="bi bi-envelope"></i> Email: divymodi1235@gmail.com</li>
+                    </ul>
+                </div>
+                <!-- Footer Section 4: Timings -->
+                <div class="footer-col">
+                    <h5 class="text-fiery-red">Timings</h5>
+                    <p class="py-1 text-white text-start">
+                        Monday-Sunday <br> 11:00 AM - 10:00 PM
+                    </p>
+                </div>
+            </div>
+            <!-- Social Media Links -->
+            <div class="text-center mt-3">
+                <p class="m-0">Follow us on Social media channels</p>
+                <a href="https://facebook.com" class="text-white mx-3 social-link"><i class="bi bi-facebook fs-4"></i></a>
+                <a href="https://x.com" class="text-white mx-3 social-link"><i class="bi bi-twitter-x fs-4"></i></a>
+                <a href="https://instagram.com" class="text-white mx-3 social-link"><i class="bi bi-instagram fs-4"></i></a>
+                <a href="https://www.youtube.com" class="text-white mx-3 social-link"><i class="bi bi-youtube fs-4"></i></a>
+            </div>
+            <div class="text-center mt-1">
+                <p>&copy; 2025 The Pizza Spot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="test1.js"></script>
+</body>
+</html>
