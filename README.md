@@ -62,7 +62,7 @@
 1. **Clone the repository**
    ```bash
    git clone https://github.com/DivyModi07/The-Pizza-Spot.git
-   cd the-pizza-spot
+   cd The-Pizza-Spot
    ```
 
 2. **Open the application**
