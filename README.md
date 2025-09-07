@@ -61,7 +61,7 @@
 ### Installation
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/the-pizza-spot.git
+   git clone https://github.com/DivyModi07/The-Pizza-Spot.git
    cd the-pizza-spot
    ```
 
